@@ -4,7 +4,8 @@
 
 using namespace std; 
 
-void parseCommand();
+void parseCommand(string command);
+void getProcesses();
 
 
 
@@ -17,10 +18,29 @@ int main() {
         cout << Constants::TERMINAL_PROMPT;
         cout << "Type a number: ";
         cin >> command;
+        parseCommand(command);
     }
     return 0;
 }
 
+void getProcesses() {
+    FILE* pipe = popen("ps -e", "r");
+    if (!pipe) {
+        std::cerr << "Error opening pipe" << std::endl;
+        return;
+    }
+
+    char buffer[256];
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        std::cout << buffer;
+    }
+
+    pclose(pipe);
+}
+
 void parseCommand(string command) {
+    if (command == "processes") {
+        getProcesses();
+    }
 }
 
