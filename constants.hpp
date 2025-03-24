@@ -3,6 +3,10 @@
 
 #include <string>
 
+/*
+constants used in constants.cpp need to be declared here in our .hpp or header file that 
+we can refernce at the top of other programs, ex at the top of main
+*/
 namespace Constants {
     extern const std::string TERMINAL_PROMPT;
     extern const std::string WELCOME_MESSAGE;
