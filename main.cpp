@@ -23,6 +23,15 @@ int main() {
     return 0;
 }
 
+//this function will be used to parse the different commands we add
+//these conditionals can lead to other functions depending on how much logic the command includes
+//any example of this is the conditional for processes, if met this executes the function to show all processes
+void parseCommand(string command) {
+    if (command == "processes") {
+        getProcesses();
+    }
+}
+
 void getProcesses() {
     FILE* pipe = popen("ps -e", "r");
     if (!pipe) {
@@ -36,11 +45,5 @@ void getProcesses() {
     }
 
     pclose(pipe);
-}
-
-void parseCommand(string command) {
-    if (command == "processes") {
-        getProcesses();
-    }
 }
 
