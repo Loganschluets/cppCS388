@@ -15,4 +15,6 @@ namespace Constants {
     const int SUCCESS = 0;
     const int ERROR = 1;
     const int NO_COMMAND = -1;
-}
+} 
+
+#endif
