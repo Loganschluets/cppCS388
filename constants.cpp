@@ -8,7 +8,7 @@ without worrying about typos or bugs
 */
 namespace Constants {
     const std::string TERMINAL_PROMPT = "> ";
-    const std::string WELCOME_MESSAGE = "Welcome to the custom shell!";
+    const std::string WELCOME_MESSAGE = "Welcome to the System Process Manager!! CLI\nType 'help' for available commands.\n";
     const std::string EXIT_COMMAND = "exit";
     const std::string HELP_COMMAND = "help";
     const std::string ERROR_MESSAGE = "An error occurred.";
@@ -17,4 +17,3 @@ namespace Constants {
     const int NO_COMMAND = -1;
 } 
 
-#endif
