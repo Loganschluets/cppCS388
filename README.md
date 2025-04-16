@@ -14,21 +14,35 @@ It also lets users interact with the system by commanding actions like clearing 
 
 **Principal Characteristics**
 Show a list of every CPU and memory-using active process.
+
 Show system-wide CPU and RAM usage now.
+
 See network interface data and active socket connections.
+
 Kill processes by supplying their PID.
+
 Simple, minimal command-line interface.
+
 Designed in-built assistance to direct users.
+
 Loop of constant commands for user interaction.
+
 Supported commands support Display a list of every commanded that you support.
+
 Show all running processes together with their CPU and memory consumption.
+
 Display current CPU use here.
-ram: show present RAM consumption.
+
+**ram**: show present RAM consumption.
+
 Show simple network interface details.
-Show all currently active TCP/UPD connections.
-kill — By PID, end a particular process.
-clear — wipe the terminal screen.
-pass out Leave the application.
+
+Show all currently active **TCP/UPD** connections.
+
+**kill** — By PID, end a particular process.
+
+**clear**— wipe the terminal screen.
+
 
 **Programming language:** C++; Technology Stack
 
