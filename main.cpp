@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <chrono>
 #include <thread>
+#include <string>
+#include <cstdlib>
 #include "constants.hpp"
 
 using namespace std; 
@@ -50,11 +52,12 @@ void parseCommand(const string& str) {
 //any example of this is the conditional for processes, if met this executes the function to show all processes
 void getCommand(vector<string> args) {
     const string arg0 = args[0];
-    if (arg0 == Constants.ALL_PROCESSES) {
+    if (arg0 == Constants::ALL_PROCESSES) {
         getProcesses();
-    } else if (arg0 == Constants.PROCESS_MEMORY && args.size() > 1) {
-        pid_t pid = static_cast<pid_t>(std::stoi());
-        get_cpu_usage_percent()
+    } else if (arg0 == Constants::PROCESS_MEMORY && args.size() > 1) {
+        pid_t pid = static_cast<pid_t>(std::stoi(args[1]));
+        double d = get_cpu_usage_percent(pid, 100);
+        printf("%s memory at %f percent", args[1].c_str(), d);
     }
 }
 
@@ -108,7 +111,7 @@ long get_process_cpu_time(pid_t pid) {
     return utime + stime;
 }
 
-double get_cpu_usage_percent(pid_t pid, int interval_ms = 100) {
+double get_cpu_usage_percent(pid_t pid, int interval_ms) {
     long clk_tck = sysconf(_SC_CLK_TCK);
 
     long proc_time1 = get_process_cpu_time(pid);
