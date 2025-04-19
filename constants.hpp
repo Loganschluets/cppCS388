@@ -20,6 +20,8 @@ namespace Constants {
     extern const std::string HELP_COMMAND;
     extern const std::string ALL_PROCESSES;
     extern const std::string PROCESS_MEMORY;
+    extern const std::string TCP;
+    extern const std::string UDP;
 }
 
 #endif

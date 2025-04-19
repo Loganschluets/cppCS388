@@ -58,6 +58,18 @@ void getCommand(vector<string> args) {
         pid_t pid = static_cast<pid_t>(std::stoi(args[1]));
         double d = get_cpu_usage_percent(pid, 100);
         printf("%s memory at %f percent", args[1].c_str(), d);
+    } else if (args.size() == 1) {
+        if (args[0] == Constants::TCP) {
+            getTCPSocketINodes();
+        } else if (args[0] == Constants::UDP) {
+            getUDPSocketINodes();
+        }
+    } else if (args.size() == 2) {
+        if (args[0] == Constants::TCP) {
+
+        } else if (args[0] == Constants::UDP) {
+            
+        }
     }
 }
 
@@ -129,5 +141,20 @@ double get_cpu_usage_percent(pid_t pid, int interval_ms) {
 
     double cpu_usage = (double)proc_delta / total_delta * 100.0;
     return cpu_usage;
+}
+
+//inodes are unique identifiers for sockets being used on an os
+//this function prints out all inodes for currently open sockets
+void getTCPSocketINodes() {
+    system("awk 'NR>1{ print $10 }' /proc/net/tcp")
+}
+
+void getUDPSocketINodes() {
+    system("awk 'NR>1{ print $10 }' /proc/net/udp")
+}
+
+void getProcessForTCPINode(string inode) {
+    const string script = "./get_inode_process.sh " + inode;
+    system(script);
 }
 

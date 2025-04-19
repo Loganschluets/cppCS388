@@ -19,5 +19,8 @@ namespace Constants {
     const std::string HELP_COMMAND = "help";
     const std::string ALL_PROCESSES = "processes";
     const std::string PROCESS_MEMORY = "pmem";
+    const std::string TCP = "tcp";
+    const std::string UDP = "udp";
+    
 
 }
