@@ -17,10 +17,13 @@ namespace Constants {
     //commands
     const std::string EXIT_COMMAND = "exit";
     const std::string HELP_COMMAND = "help";
-    const std::string ALL_PROCESSES = "processes";
+    const std::string PROCESSES = "processes";
+    const std::string USER = "user";
     const std::string PROCESS_MEMORY = "pmem";
     const std::string TCP = "tcp";
     const std::string UDP = "udp";
+    const std::string MEMORY = "mem";
+    const std::string CPU = "cpu";
     
 
 }

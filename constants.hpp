@@ -18,10 +18,13 @@ namespace Constants {
     //commands
     extern const std::string EXIT_COMMAND;
     extern const std::string HELP_COMMAND;
-    extern const std::string ALL_PROCESSES;
+    extern const std::string PROCESSES;
+    extern const std::string USER;
     extern const std::string PROCESS_MEMORY;
     extern const std::string TCP;
     extern const std::string UDP;
+    extern const std::string MEMORY;
+    extern const std::string CPU;
 }
 
 #endif
