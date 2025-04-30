@@ -1,7 +1,10 @@
 #!/bin/bash
 
-OUTPUT="main"
+#compile the main program
+g++ main.cpp constants.cpp -o main -pthread
 
-g++ *.cpp -o $OUTPUT
+#compile the TCP test program
+g++ tcp_test.cpp -o tcp_test -pthread
 
-./$OUTPUT
+#run the main program
+./main

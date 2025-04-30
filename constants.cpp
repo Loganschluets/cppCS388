@@ -1,11 +1,9 @@
 #include "constants.hpp"
 
-/*
-stores the references to all commands we make for our program.
-this way we can use Constants::<WHATEVER_STRING_YOU_NEED>
-to get the exact string or constant variable we need every time 
-without worrying about typos or bugs
-*/
+//stores the references to all commands we make for our program.
+//this way we can use Constants::<WHATEVER_STRING_YOU_NEED>
+//to get the exact string or constant variable we need every time 
+//without worrying about typos or bugs
 namespace Constants {
     const std::string TERMINAL_PROMPT = "> ";
     const std::string WELCOME_MESSAGE = "Welcome to the custom shell!";
@@ -24,6 +22,8 @@ namespace Constants {
     const std::string UDP = "udp";
     const std::string MEMORY = "mem";
     const std::string CPU = "cpu";
-    
-
+    const std::string TCP_CONNECTIONS = "tcpconn";
+    const std::string UDP_CONNECTIONS = "udpconn";
+    const std::string PROCESS_DETAILS = "pdetails";
+    const std::string THREAD_LIST = "threads";
 }
